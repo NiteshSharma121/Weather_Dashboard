@@ -34,5 +34,3 @@ app.get('/api/weather', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Backend server running on http://localhost:${PORT}`);
 });
-const cors = require("cors");
-app.use(cors());
