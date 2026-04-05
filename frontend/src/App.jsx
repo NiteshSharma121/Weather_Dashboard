@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-
+const API_URL = import.meta.env.VITE_API_URL;
 function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
@@ -8,11 +8,10 @@ function App() {
 
   const fetchWeather = async () => {
     if (!city) return;
-    
     try {
       setError('');
       // CRITICAL: We are calling OUR backend, not the OpenWeather API directly.
-      const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
+      const response = await fetch(`${API_URL}/weather?city=Delhi`);
       
       if (!response.ok) {
         throw new Error('City not found or server error');
