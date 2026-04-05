@@ -11,7 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 // The Proxy Route
-app.get('/api/weather', async (req, res) => {
+app.get('/weather', async (req, res) => {
   const city = req.query.city;
   const apiKey = process.env.OPENWEATHER_API_KEY;
   
